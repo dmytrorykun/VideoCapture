@@ -132,6 +132,8 @@ class MyNSOpenGLView: NSOpenGLView, AVCaptureVideoDataOutputSampleBufferDelegate
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!)
     {
+        let startTime = DispatchTime.now()
+        
         if let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
         {
             let width = CVPixelBufferGetWidth(imageBuffer)
@@ -174,6 +176,19 @@ class MyNSOpenGLView: NSOpenGLView, AVCaptureVideoDataOutputSampleBufferDelegate
                 glTexImage2D(GLenum(GL_TEXTURE_2D), 0, format, GLsizei(width), GLsizei(height), 0, GLenum(format), GLenum(GL_UNSIGNED_BYTE), data)
 
                 render()
+                
+                let timeAfterRendering = DispatchTime.now()
+                
+                let pixels = UnsafeMutableRawPointer.allocate(bytes: width*height*numComponents, alignedTo: 1)
+                glReadPixels(0, 0, GLsizei(width), GLsizei(height), GLenum(format), GLenum(GL_UNSIGNED_BYTE), pixels)
+                
+                let timeAfterReadingPixels = DispatchTime.now()
+                
+                let totalTime = (timeAfterReadingPixels.uptimeNanoseconds - startTime.uptimeNanoseconds) / 1_000_000 //milliseconds
+                let timeForRendering = (timeAfterRendering.uptimeNanoseconds - startTime.uptimeNanoseconds) / 1_000_000 //milliseconds
+                let timeForReadingPixels = (timeAfterReadingPixels.uptimeNanoseconds - timeAfterRendering.uptimeNanoseconds) / 1_000_000 //milliseconds
+                
+                Swift.print("Frame processed in \(totalTime) ms (rendering: \(timeForRendering) ms, reading pixels: \(timeForReadingPixels) ms)")
             }
         }
     }
