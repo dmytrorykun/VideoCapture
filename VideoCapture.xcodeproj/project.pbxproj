@@ -11,6 +11,14 @@
 		CEC284171FD5D0B8006ED7CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC284161FD5D0B8006ED7CD /* ViewController.swift */; };
 		CEC284191FD5D0B8006ED7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC284181FD5D0B8006ED7CD /* Assets.xcassets */; };
 		CEC2841C1FD5D0B8006ED7CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2841A1FD5D0B8006ED7CD /* Main.storyboard */; };
+		CEC284251FD5D30A006ED7CD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC284241FD5D30A006ED7CD /* AVFoundation.framework */; };
+		CEC284271FD5DDF2006ED7CD /* MyOpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC284261FD5DDF2006ED7CD /* MyOpenGLView.swift */; };
+		CEC284291FD5DE6E006ED7CD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC284281FD5DE6E006ED7CD /* OpenGL.framework */; };
+		CEC2842B1FD5DFB5006ED7CD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC2842A1FD5DFB5006ED7CD /* GLKit.framework */; };
+		CEC2842D1FD5DFBC006ED7CD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC2842C1FD5DFBC006ED7CD /* CoreVideo.framework */; };
+		CEC284301FD5F11A006ED7CD /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CEC2842E1FD5F11A006ED7CD /* Shader.fsh */; };
+		CEC284311FD5F11A006ED7CD /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CEC2842F1FD5F11A006ED7CD /* Shader.vsh */; };
+		CEC284341FD68A28006ED7CD /* ShaderProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC284331FD68A28006ED7CD /* ShaderProgram.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		CEC284181FD5D0B8006ED7CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC2841B1FD5D0B8006ED7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEC2841D1FD5D0B8006ED7CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC284241FD5D30A006ED7CD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CEC284261FD5DDF2006ED7CD /* MyOpenGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOpenGLView.swift; sourceTree = "<group>"; };
+		CEC284281FD5DE6E006ED7CD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		CEC2842A1FD5DFB5006ED7CD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		CEC2842C1FD5DFBC006ED7CD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CEC2842E1FD5F11A006ED7CD /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		CEC2842F1FD5F11A006ED7CD /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		CEC284331FD68A28006ED7CD /* ShaderProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShaderProgram.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC2842D1FD5DFBC006ED7CD /* CoreVideo.framework in Frameworks */,
+				CEC2842B1FD5DFB5006ED7CD /* GLKit.framework in Frameworks */,
+				CEC284291FD5DE6E006ED7CD /* OpenGL.framework in Frameworks */,
+				CEC284251FD5D30A006ED7CD /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +58,7 @@
 			children = (
 				CEC284131FD5D0B8006ED7CD /* VideoCapture */,
 				CEC284121FD5D0B8006ED7CD /* Products */,
+				CEC284231FD5D30A006ED7CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +73,28 @@
 		CEC284131FD5D0B8006ED7CD /* VideoCapture */ = {
 			isa = PBXGroup;
 			children = (
+				CEC2842E1FD5F11A006ED7CD /* Shader.fsh */,
+				CEC2842F1FD5F11A006ED7CD /* Shader.vsh */,
 				CEC284141FD5D0B8006ED7CD /* AppDelegate.swift */,
 				CEC284161FD5D0B8006ED7CD /* ViewController.swift */,
+				CEC284261FD5DDF2006ED7CD /* MyOpenGLView.swift */,
+				CEC284331FD68A28006ED7CD /* ShaderProgram.swift */,
 				CEC284181FD5D0B8006ED7CD /* Assets.xcassets */,
 				CEC2841A1FD5D0B8006ED7CD /* Main.storyboard */,
 				CEC2841D1FD5D0B8006ED7CD /* Info.plist */,
 			);
 			path = VideoCapture;
+			sourceTree = "<group>";
+		};
+		CEC284231FD5D30A006ED7CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2842C1FD5DFBC006ED7CD /* CoreVideo.framework */,
+				CEC2842A1FD5DFB5006ED7CD /* GLKit.framework */,
+				CEC284281FD5DE6E006ED7CD /* OpenGL.framework */,
+				CEC284241FD5D30A006ED7CD /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +156,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC284311FD5F11A006ED7CD /* Shader.vsh in Resources */,
+				CEC284301FD5F11A006ED7CD /* Shader.fsh in Resources */,
 				CEC284191FD5D0B8006ED7CD /* Assets.xcassets in Resources */,
 				CEC2841C1FD5D0B8006ED7CD /* Main.storyboard in Resources */,
 			);
@@ -133,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC284171FD5D0B8006ED7CD /* ViewController.swift in Sources */,
+				CEC284341FD68A28006ED7CD /* ShaderProgram.swift in Sources */,
 				CEC284151FD5D0B8006ED7CD /* AppDelegate.swift in Sources */,
+				CEC284271FD5DDF2006ED7CD /* MyOpenGLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
